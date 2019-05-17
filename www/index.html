@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset="utf-8">
- <meta http-equiv="X-Frame-Options" content="allow-from http://webpie.tech/"> 
-
+ <meta http-equiv="X-Frame-Options" content="allow-from http://webpie.tech/"> 
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
 
     <!-- Required meta tags-->
- 
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
-
-
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Color theme for statusbar -->
     <meta name="theme-color" content="#2196f3">
@@ -25,44 +30,57 @@
 </head>
 
 <body>
-
-<style>
-
-
-/* Playground by EThaiZone */
-#parent {
-  width: 100%;
-  height: 100%;
-  border:solid 1px #000;
-}
-iframe {
-  width:100%;
-  height:100%;
-  border:0px;
-}
-
-#parent > button {
-  opacity: 0.3;
-  position:relative;
-  float: right;
-  right:10px;
-  bottom:35px;
-  transition: 0.5s;
-}
-#parent > button {
-  opacity: 1;
-}  
   
+<style>
+.md .block {
+ margin: 0 0; 
+  padding: 0 0; 
+}
 </style>
-
-<div id="parent">
-  <iframe src="https://www.css-tricks.com" style="position: fixed; z-index: 100; width: 100%; height: 100%; top:0;"></iframe>
-  <button>Back to main page</button>
+<div class="page">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md">Back</span>
+        </a>
+      </div>
+      <div class="title">Animated Tabs</div>
+    </div>
+  </div>
+  <div class="toolbar tabbar toolbar-bottom">
+    <div class="toolbar-inner">
+      <a href="#tab-1" class="tab-link tab-link-active">Tab 1</a>
+      <a href="#tab-2" class="tab-link">Tab 2</a>
+      <a href="#tab-3" class="tab-link">Tab 3</a>
+    </div>
+  </div>
+  <div class="tabs-animated-wrap">
+    <div class="tabs">
+      <div id="tab-1" class="page-content tab tab-active">
+        <div class="block">
+          <p> <iframe src="http://webpie.tech/" style="top:0px; left:0px;  right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+   
+</iframe></p>
+          ...
+        </div>
+      </div>
+      <div id="tab-2" class="page-content tab">
+        <div class="block">
+          <p>Tab 2 content</p>
+          ...
+        </div>
+      </div>
+      <div id="tab-3" class="page-content tab">
+        <div class="block">
+          <p>Tab 3 content</p>
+          ...
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
-
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
