@@ -13,8 +13,7 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
 
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
-
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
     <!-- Required meta tags-->
  
 
@@ -96,6 +95,14 @@ width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden;
 </head>
 
 <body>
+<script>
+// Set up a whitelist of domains that can render us in an iframe
+var XFRAME_WHITELIST = [ 'http://webpie.tech', 'https://y.com' ];
+// If the domain matches, allow iframes from that domain
+if (XFRAME_WHITELIST.indexOf(req.query.domain) !== -1) {
+    res.header('X-FRAME-OPTIONS', 'ALLOW-FROM ' + req.query.domain);
+}
+</script>
 <div class="topnav" id="myTopnav">
   <a href="#home" class="active">Home</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -106,14 +113,7 @@ width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden;
 
 <iframe src="http://webpie.tech" style=" top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"> Your browser doesn't support iframes </iframe>
 
-<script>
-// Set up a whitelist of domains that can render us in an iframe
-var XFRAME_WHITELIST = [ 'http://webpie.tech', 'https://y.com' ];
-// If the domain matches, allow iframes from that domain
-if (XFRAME_WHITELIST.indexOf(req.query.domain) !== -1) {
-    res.header('X-FRAME-OPTIONS', 'ALLOW-FROM ' + req.query.domain);
-}
-</script>
+
 
 
 
