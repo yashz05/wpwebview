@@ -32,7 +32,7 @@
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
     </platform>
-    <preference name="StatusBarBackgroundColor" value="#212121" />
+    <preference name="StatusBarBackgroundColor" value="#512DA8" />
     <preference name="DisallowOverscroll" value="true" />
     <platform name="android">
         <icon density="ldpi" src="res/icon/android/drawable-ldpi-icon.png" />
