@@ -86,18 +86,7 @@ width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden;
     text-align: left;
   }
 }
-.ripple {
-  background-position: center;
-  transition: background 0.8s;
-}
-.ripple:hover {
-  background: #303F9F radial-gradient(circle, transparent 1%, #303F9F 1%) center/15000%;
-}
-.ripple:active {
-  background-color: #3F51B5;
-  background-size: 100%;
-  transition: background 0s;
-}
+
 
 
 </style>
@@ -114,10 +103,21 @@ if (XFRAME_WHITELIST.indexOf(req.query.domain) !== -1) {
 }
 </script>
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active ripple">Home</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <a class="ripple">App name</a>
   
-<i class="material-icons md-48">face</i>
+ 
+  <a class="icon" >
+  
+<i class="material-icons">
+info
+</i>
+  </a>
+  
+   <a href="" class="icon" onclick="iframe.contentWindow.location.reload(true);"> 
+  
+<i class="material-icons">
+replay
+</i>
   </a>
 </div>
 
