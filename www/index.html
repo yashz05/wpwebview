@@ -29,6 +29,7 @@
     <link href="css/style.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"> 
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 	
 
 <style>
@@ -94,6 +95,7 @@ width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden;
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
+  transition: all .3s ease-out;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
@@ -103,11 +105,11 @@ width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden;
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+ 
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+ 
+ 
 }
 
 /* The Close Button */
@@ -125,6 +127,92 @@ width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden;
   cursor: pointer;
 }
 
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+img{
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+h1{
+  font-size: 2.25em;
+  font-weight: 300;
+  letter-spacing: -.05em;
+  margin: .25em 0 .25em;
+}
+
+p{
+  line-height: 1.4;
+}
+
+strong{
+  color: #bbb;
+  font-size: .75em;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+  word-spacing: .0625em;
+}
+
+
+
+main{
+  margin: auto;
+  max-width: 360px;
+}
+
+section{
+  background: #fff;
+  border-radius: .25em;
+  box-shadow: 0 .125em .125em hsla(0,0%,0%,.1);
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+
+figure{
+  height: 12.5em;
+}
+
+article{
+  padding: 2em;
+}
+
+
+
+@supports (display: grid){
+  @media only screen and (min-width: 768px){
+    body{
+      font-size: 1em;
+    }
+    main{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+      grid-gap: 1.5em;
+      max-width: 1080px;
+    }
+
+    section{
+      margin: 0;
+    }
+  }
+}
+.clos{
+       width: 40%;
+    background: #651fff;
+    color: white;
+    border-radius: 100px;
+    border: 0;
+    height: 40px;
+    margin-bottom: 15px;
+    margin-top: -10px;
+	}
 </style>
 	
 </head>
@@ -157,12 +245,23 @@ replay
   </a>
 </div>
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="myModal" class="modal bounce">
 
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
+ 
+  <section>
+    <figure>
+      <img src="https://images.pexels.com/photos/944743/pexels-photo-944743.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
+    </figure>
+    <article>
+      <strong>Social Media</strong>
+      <h1>Keep cool when you’re under attack</h1>
+      <p>Learn how to maintain your emotional balance when strangers start attacking you online.</p>
+    </article>
+	<center><button class="clos"type="button">Close</button></center?
+  </section>
+  
   </div>
 
 </div>
