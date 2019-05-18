@@ -54,10 +54,7 @@ width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden;
   font-size: 17px;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+
 
 .active {
   background-color: #4CAF50;
@@ -89,7 +86,18 @@ width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden;
     text-align: left;
   }
 }
-
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #303F9F radial-gradient(circle, transparent 1%, #303F9F 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #3F51B5;
+  background-size: 100%;
+  transition: background 0s;
+}
 
 
 </style>
@@ -106,14 +114,14 @@ if (XFRAME_WHITELIST.indexOf(req.query.domain) !== -1) {
 }
 </script>
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
+  <a href="#home" class="active ripple">Home</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
+  
+<i class="material-icons md-48">face</i>
   </a>
 </div>
 
 
-<i class="material-icons md-48">face</i>
 <iframe src="http://webpie.tech" style=" top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"> Your browser doesn't support iframes </iframe>
 
 
