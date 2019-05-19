@@ -34,6 +34,7 @@
     </platform>
     <preference name="StatusBarBackgroundColor" value="#512DA8" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <platform name="android">
         <icon density="ldpi" src="res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="res/icon/android/drawable-mdpi-icon.png" />
